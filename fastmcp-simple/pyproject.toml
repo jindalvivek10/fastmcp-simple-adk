@@ -1,0 +1,19 @@
+[project]
+name = "fastmcp-simple"
+version = "0.1.0"
+description = "A simple project demonstrating FastMCP and Google ADK."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp",
+    "requests",
+    "google-adk",
+]
+
+[project.scripts]
+fastmcp-simple = "fastmcp_simple.server:main"
+
+[tool.uv]
+dev-dependencies = [
+    "ruff",
+] 
