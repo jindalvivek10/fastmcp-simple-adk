@@ -22,15 +22,16 @@ def desktop() -> list[str]:
 
 # Add a dynamic greeting resource
 @mcp.tool()
-def get_greeting(name: str) -> str:
+def get_greeting(msg: str) -> str:
     """Get a personalized greeting"""
-    return f"Hello, {name}!"
+    return f"Hello, {msg}!"
 
 
 @mcp.tool()
 def get_fastmcp_docs() -> str:
     """Get the contents of the FastMCP docs"""
-    response = requests.get("https://gofastmcp.com/llms-full.txt")
+    # response = requests.get("https://gofastmcp.com/llms-full.txt")
+    response = requests.get("https://gofastmcp.com/llms.txt")
     response.raise_for_status()
     return response.text
 

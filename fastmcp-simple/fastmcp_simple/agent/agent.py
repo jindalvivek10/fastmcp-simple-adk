@@ -27,3 +27,14 @@ root_agent = Agent(
         )
     ],
 )
+
+
+if __name__ == "__main__":
+    import asyncio
+
+    async def main():
+        print("=== Asking the agent to use the desktop tool ===")
+        response = await root_agent.run("Please use your tools to call desktop tool for Vivek.")
+        print(f"\n=== Agent Response ===\n{response}")
+
+    asyncio.run(main())
