@@ -1,6 +1,9 @@
+
+import os
 from pathlib import Path
 
 from google.adk.agents import Agent
+from google.adk.models import Gemini
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset
 from mcp import StdioServerParameters
 
@@ -9,12 +12,18 @@ PATH_TO_MCP_SERVER_SCRIPT = str((Path(__file__).parent.parent / "server.py").res
 
 print(PATH_TO_MCP_SERVER_SCRIPT)
 
+os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "TRUE"
+os.environ["GOOGLE_CLOUD_PROJECT"] = os.environ.get("GOOGLE_CLOUD_PROJECT", "vjindal-project-ai-basic")
+os.environ["GOOGLE_CLOUD_LOCATION"] = "us-central1"
+
+model_config = Gemini(model="gemini-2.5-flash")
+
 
 root_agent = Agent(
-    name="greeting_agent",
+    name="mcp_agent",
     # https://ai.google.dev/gemini-api/docs/models
-    model="gemini-2.5-flash-preview-04-17",
-    description="Greeting agent",
+    model = model_config,
+    description="FastMCP enabled agent",
     instruction="""
      You are a highly proactive and efficient assistant
     """,
@@ -34,7 +43,9 @@ if __name__ == "__main__":
 
     async def main():
         print("=== Asking the agent to use the desktop tool ===")
-        response = await root_agent.run("Please use your tools to call desktop tool for Vivek.")
+        response = await root_agent.run()
         print(f"\n=== Agent Response ===\n{response}")
 
     asyncio.run(main())
+    # from google.adk.runtime import Runtime
+    # runtime = Runtime(agents=[root_agent])

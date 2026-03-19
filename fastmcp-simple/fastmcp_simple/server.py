@@ -24,7 +24,8 @@ def desktop() -> list[str]:
 @mcp.tool()
 def get_greeting(msg: str) -> str:
     """Get a personalized greeting"""
-    return f"Hello, {msg}!"
+    print(f"======= DEBUG::: get_greeting called with msg: {msg}") 
+    return f"Here's a greeting for you -- , {msg}!"
 
 
 @mcp.tool()
