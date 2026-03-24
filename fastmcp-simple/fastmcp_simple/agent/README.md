@@ -13,5 +13,7 @@ jindal_vivek10@cloudshell:~/projects/fastmcp-simple-adk/fastmcp-simple/fastmcp_s
 
 ##You need to usually run other gcloud commands to associate your agent to your cloud project for billing etc)
 **gcloud auth application-default login**
+
 **gcloud auth application-default set-quota-project vjindal-project-ai-basic**
+
 **gcloud auth login**
