@@ -1,6 +1,8 @@
 # FastMCP Simple Example
 
-This project demonstrates a simple implementation of FastMCP with a Google ADK agent (We need to modify this===)
+This project demonstrates a simple implementation of FastMCP with a Google ADK agent
+
+### Following - https://github.com/bhancockio/fastmcp-crash-course/tree/main
 
 ## Running the Server
 
