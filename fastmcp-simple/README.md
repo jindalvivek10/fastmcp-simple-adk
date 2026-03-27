@@ -2,7 +2,7 @@
 
 ### What we are doing here
 1) Create a fastmcp server and run a client locally using stdin/stdout and pass mcp server so that client can connect to server and invoke it's tools
-2) create a agent that can automatically run the fastmcp server as tool and then invoke tools on the server locally using stdin/stdout
+2) create a agent which will connect to vertex AI and using google cloud project that can automatically run the fastmcp server as tool and then invoke tools on the agent running locally using stdin/stdout
 
 This project demonstrates a simple implementation of FastMCP with a Google ADK agent
 
