@@ -1,5 +1,9 @@
 # FastMCP Simple Example
 
+### What we are doing here
+1) Create a fastmcp server and run a client locally using stdin/stdout and pass mcp server so that client can connect to server and invoke it's tools
+2) create a agent that can automatically run the fastmcp server as tool and then invoke tools on the server locally using stdin/stdout
+
 This project demonstrates a simple implementation of FastMCP with a Google ADK agent
 
 ### Following - https://github.com/bhancockio/fastmcp-crash-course/tree/main
